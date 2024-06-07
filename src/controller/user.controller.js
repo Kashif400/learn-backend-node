@@ -167,13 +167,14 @@ const loginUser = asyncHandler(async (req, res) =>{
 
     // logout user
     const logoutUser = asyncHandler(async (req, res) => {
-        await User.findByIdAndUpdate(
+      const user=  await User.findByIdAndUpdate(
             req.user._id, {
             $set: {
                 refreshToken: undefined
                 },
                 new :true,
-        })
+      })
+        
 
             const options = {
                 httpOnly: true,

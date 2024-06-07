@@ -59,7 +59,7 @@ router.route('/update-account').patch(verifyJWT, updateAccountDetails);
 router.route('/avatar').patch(verifyJWT, upload.single, updateUserAvatar);
 
 // update coverImage
-router.route('/coverImage').patch(verifyJWT,upload.single("/coverImage"),updateUserCoverImage);
+router.route('/coverImage').patch(verifyJWT,upload.single("coverImage"),updateUserCoverImage);
     
 
 router.route("/c/:username").get(verifyJWT, getCurrentChannelProfile)
